@@ -30,7 +30,19 @@ body {
     color: #463337;
 }
 
-/* INÍCIO TELA DE CADASTRO*/
+.title:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.title a{
+    font-family: JetBrains Mono;
+    font-size: 32px;
+    color: #463337;
+    text-decoration: none;
+}
+
+/* INÍCIO TELA DE LOGIN*/
 .tela1 {
     background-color: #294EA7;
     width: 100vw;
@@ -40,26 +52,14 @@ body {
     align-items: center;
 }
 
-.box {
-    background-color: #EEDEAE;
-    width: 70vw;
-    height: 70vh;
-    border-radius: 20px;
-    display: flex;
-}
-
-/*INÍCIO BOX1*/
-.box1 {
+.card {
     background-color: #F6EED9;
-    width: 40%;
-    height: 100%-80px;
+    height: 70vh;
+    width: 35vw;
     border-radius: 20px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    padding: 40px 0px 40px 40px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
 }
 
 .bemvindo {
@@ -67,33 +67,16 @@ body {
     font-weight: 500;
     font-family: JetBrains Mono;
     color: #381C22;
-}
-
-.nota {
     display: flex;
     align-items: center;
+    justify-content: center;
+    height: 20%;
 }
 
-/*INÍCIO BOX2*/
-.box2 {
-    background-color: #EEDEAE;
-    width: 60%;
-    height: 100%-80px;
-    border-radius: 20px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    padding: 40px 40px 40px 40px;
-}
-
-.criarconta {
-    font-size: 32px;
-    font-weight: 500;
-    font-family: JetBrains Mono;
-    color: #381C22;
-}
-
-.inputs {
-    height: 60%;
+.resto {
+    height: 70%;
+    width: 80%;
+    background-color: aquamarine;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -101,32 +84,11 @@ body {
 
 .input {
     color: #381C22;
+    background-color: rgb(162, 80, 145);
     font-size: 22px;
-    width: 45%;
-}
-
-.nomeemail {
-    display: flex;
-    justify-content: space-between;
-}
-
-.senhaconfirm {
     width: 100%;
+    height: 20%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-}
-
-input {
-    background-color: #E1CE95;
-    border-color: #E1CE95;
-    border-style: solid;
-    border-radius: 10px;
-    height: 42px;
-    width: 200px;
-}
-
-input::placeholder {
-    color: #381C22;
-    font-family: Inter;
-    font-size: 22px;
 }

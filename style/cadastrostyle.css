@@ -1,0 +1,186 @@
+body {
+    margin: 0px;
+    font-family: Inter;
+    background-color: #F6EED9;
+}
+
+
+/* INÍCIO DA HEADER/NAVBAR */
+.header {
+    background-color: #EEDEAE;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 50px;
+    padding: 0px 40px 0px 40px;
+    /*top right bottom left*/
+}
+
+.title {
+    font-family: JetBrains Mono;
+    font-size: 32px;
+    color: #463337;
+}
+
+.title:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.title a {
+    font-family: JetBrains Mono;
+    font-size: 32px;
+    color: #463337;
+    text-decoration: none;
+}
+
+/* INÍCIO TELA DE CADASTRO*/
+.tela1 {
+    background-color: #294EA7;
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    background-color: #EEDEAE;
+    width: 70vw;
+    height: 70vh;
+    border-radius: 20px;
+    display: flex;
+}
+
+/*INÍCIO BOX1*/
+.box1 {
+    background-color: #F6EED9;
+    width: 40%;
+    height: 100%-80px;
+    border-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 40px 0px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bemvindo {
+    font-size: 32px;
+    font-weight: 500;
+    font-family: JetBrains Mono;
+    color: #381C22;
+}
+
+.nota {
+    display: flex;
+    align-items: center;
+}
+
+/*INÍCIO BOX2*/
+.box2 {
+    background-color: #EEDEAE;
+    width: 60%;
+    height: 100%-80px;
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    padding: 40px 40px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.criarconta {
+    font-size: 32px;
+    font-weight: 500;
+    font-family: JetBrains Mono;
+    color: #381C22;
+}
+
+.inputs {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.input {
+    color: #381C22;
+    font-size: 22px;
+    width: 50%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nomeemail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.senhaconfirm {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    background-color: #E1CE95;
+    border-color: #E1CE95;
+    border-style: solid;
+    border-radius: 15px;
+    width: 200px;
+    padding: 20px 10px 15px 7px;
+}
+
+input::placeholder {
+    color: #381C22;
+    font-family: Inter;
+    font-size: 22px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.containerButton {
+    height: 20%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.buttonCadastro {
+    background-color: #294EA7;
+    height: 65%;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.buttonCadastro span {
+    font-family: JetBrains Mono;
+    font-size: 20px;
+    color: #F6EED9;
+}
+
+.buttonCadastro:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
