@@ -59,14 +59,15 @@ body {
     text-decoration: none;
 }
 
-.agora b{
-    font-weight: bold;
+.buttonLogin a {
+    font-weight: 400;
+    color: #EEDEAE;
     text-decoration: none;
 }
 
 .navbar .buttonLogin {
     height: 80%;
-    width: 25%;
+    width: 15%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -289,6 +290,10 @@ body {
     border-radius: 25px;
     background-color: #294EA7;
     padding: 10px 20px 10px 20px;
+}
+
+.buttonTeste a {
+    text-decoration: none;
 }
 
 .buttonTeste span {

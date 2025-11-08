@@ -1,0 +1,43 @@
+body {
+    margin: 0px;
+    font-family: Inter;
+    background-color: #F6EED9;
+}
+
+
+/* INÍCIO DA HEADER/NAVBAR */
+.header {
+    background-color: #EEDEAE;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 50px;
+    padding: 0px 40px 0px 40px;
+    /*top right bottom left*/
+}
+
+.title {
+    font-family: JetBrains Mono;
+    font-size: 32px;
+    color: #463337;
+}
+
+.title:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.title a{
+    font-family: JetBrains Mono;
+    font-size: 32px;
+    color: #463337;
+    text-decoration: none;
+}
