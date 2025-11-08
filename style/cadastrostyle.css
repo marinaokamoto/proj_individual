@@ -148,7 +148,7 @@ input {
 input::placeholder {
     color: #381C22;
     font-family: Inter;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 input:focus {
@@ -174,10 +174,11 @@ input:focus {
     border-radius: 20px;
 }
 
-.buttonCadastro span {
+.buttonCadastro a {
     font-family: JetBrains Mono;
     font-size: 20px;
     color: #F6EED9;
+    text-decoration: none;
 }
 
 .buttonCadastro:hover {
