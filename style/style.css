@@ -103,9 +103,12 @@ body {
 
 .bannerNotas {
     display: flex;
-    width: 60vw;
+    flex-direction: row;
+    width: 99vw;
     justify-content: space-between;
+    align-items: center;
 }
+
 
 .nota1:hover {
     transform: rotate(10deg);
@@ -420,8 +423,8 @@ body {
     width: 99vw;
 }
 .espaco {
-    height: 15%;
-    background-color: #F6EED9;
+    height: 30%;
+    background-image: url(/assets/footer.png);
 }
 
 .footerFR {
