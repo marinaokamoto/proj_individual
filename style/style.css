@@ -423,8 +423,12 @@ body {
     width: 99vw;
 }
 .espaco {
-    height: 30%;
-    background-image: url(/assets/footer.png);
+    width: 100%;
+}
+
+.espaco img {
+    max-width: 100%;
+    max-height: none;
 }
 
 .footerFR {
