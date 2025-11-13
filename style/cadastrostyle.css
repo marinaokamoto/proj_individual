@@ -159,19 +159,25 @@ input:focus {
     height: 20%;
     width: 90%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 
 }
 
+.containerButton a{
+    text-decoration: none;
+    color: #381C22;
+}
+
 .buttonCadastro {
     background-color: #294EA7;
-    height: 65%;
+    height: 55%;
     width: 35%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
 .buttonCadastro a {
