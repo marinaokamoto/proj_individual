@@ -41,3 +41,12 @@ body {
     color: #463337;
     text-decoration: none;
 }
+
+/* INÍCIO DA TELA*/
+.tela{
+    background-color: #294EA7;
+    background: #294EA7;
+    background: linear-gradient(180deg, rgba(41, 78, 167, 1) 0%, rgba(129, 177, 225, 1) 85%);
+    width: 100vw;
+    height: 90vh;
+}
