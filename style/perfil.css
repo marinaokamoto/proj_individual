@@ -44,9 +44,190 @@ body {
 
 /* INÍCIO DA TELA*/
 .tela{
-    background-color: #294EA7;
     background: #294EA7;
     background: linear-gradient(180deg, rgba(41, 78, 167, 1) 0%, rgba(129, 177, 225, 1) 85%);
-    width: 100vw;
-    height: 90vh;
+    width: 99vw;
+    height: 140vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 90vw;
+}
+
+.tela1 {
+    background-color: cadetblue;
+    height: 130vh;
+    width: 100%;
+}
+
+.tela1 span {
+    font-family: JetBrains Mono;
+    font-size: 26px;
+    color: #F6EED9;
+}
+
+.graficos {
+    height: 50%;
+    width: 100%;
+    margin-top: 15px;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+}
+
+.graficos span {
+    font-family: Inter;
+    font-size: 20px;
+    text-align: center;
+    height: 5%;
+    color: #294EA7;
+    margin-top: 10px;
+}
+
+.graficos .spanMarrom {
+    font-family: Inter;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+    height: 15%;
+    color: #51383D;
+}
+
+.graf1 {
+    background-color: #F6EED9;
+    height: 100%;
+    width: 30%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.grafico1 {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 90%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+}
+
+.graf2 {
+    background-color: #EEDEAE;
+    height: 100%;
+    width: 45%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grafico2 {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-bottom: 20px;
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.kpiContainer {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.kpi1 {
+    background-color: #F6EED9;
+    height: 45%;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.kpi1 span {
+    color: #294EA7;
+}
+
+.kpi2 {
+    background-color: #EEDEAE;
+    height: 45%;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.kpi2 span {
+    color: #51383D;
+}
+
+.kpi1 .ano {
+    font-size: 50px;
+    height: 80%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.kpi2 .ano {
+    font-size: 50px;
+    height: 80%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+/* INÍCIO TELA2 */
+.tela2 {
+    height: 50vh;
+    background-color: brown;
+    padding-top: 30px;
+}
+
+.tabelaHistorico {
+    background-color: #294EA7;
+    width: 60%;
+    height: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    background-color: aqua;
+    width: 100%;
+    height: 100%;
+}
+
+.tabelaCabecalho {
+    background-color: #EEDEAE;
+}
+
+
+tr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+td {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tabelaBody {
+    background-color: blueviolet;
 }

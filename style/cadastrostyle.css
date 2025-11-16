@@ -112,13 +112,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-bottom: 30px;
 }
 
 .input {
     color: #381C22;
     font-size: 22px;
     width: 50%;
-    height: 100px;
+    height: 130px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -143,6 +144,8 @@ input {
     border-radius: 15px;
     width: 200px;
     padding: 20px 10px 15px 7px;
+    font-family: Inter;
+    font-size: 20px;
 }
 
 input::placeholder {
@@ -153,6 +156,11 @@ input::placeholder {
 
 input:focus {
     outline: none;
+}
+
+.validacao {
+    height: 30px;
+    font-size: 16px;
 }
 
 .containerButton {

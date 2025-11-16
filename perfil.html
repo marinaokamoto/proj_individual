@@ -22,9 +22,191 @@
     </div>
 
     <div class="tela">
-        <div class="tela1">
+        <div class="container">
 
+            <div class="tela1">
+                <span>Bem-vindo! Aqui estão seus últimos dados:</span>
+
+                <div class="graficos">
+                    <div class="graf1">
+                        <span>Você se enquadra nos <b>12%</b> <br> que acertaram mais sobre <b>Rock</b></span>
+                        <div class="grafico1">
+                            <canvas id="graficoGeral"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="graf2">
+                        <span class="spanMarrom">Aqui estão os gêneros que você <b>mais conhece:</b></span>
+                        <div class="grafico2">
+                            <canvas id="graficoGeneros"></canvas>
+                        </div>
+                    </div>
+                    <div class="kpiContainer">
+                        <div class="kpi1">
+                            <span>A época que você<br><b>mais</b> conhece:</span>
+                            <span class="ano">2000</span>
+                        </div>
+
+                        <div class="kpi2">
+                            <span>A época que você<br><b>menos</b> conhece:</span>
+                            <span class="ano">1970</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="tela2">
+                        <div class="tabelaHistorico">
+                            <table>
+                                <thead>
+                                    <tr class="tabelaCabecalho">
+                                        <th>data</th>
+                                        <th>resultado final</th>
+                                        <th>pontuação</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="tabelaBody">
+                                    <tr>
+                                        <td>15/11/2025</td>
+                                        <td>Rock</td>
+                                        <td>08/10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13/11/2025</td>
+                                        <td>Pop</td>
+                                        <td>07/10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>12/11/2025</td>
+                                        <td>Rock</td>
+                                        <td>07/10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11/11/2025</td>
+                                        <td>MPB</td>
+                                        <td>06/10</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="kpiArtistas">
+                            <div class="artistaMais"></div>
+                            <div class="artistaMenos"></div>
+                        </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
 </html>
+
+<!--BIBLIOTECA CHART JS-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- GRAFICOS-->
+<script>
+  const ctxgeral = document.getElementById('graficoGeral');
+  const ctxgeneros = document.getElementById('graficoGeneros');
+
+  new Chart(ctxgeral, {
+    type: 'polarArea',
+    data: {
+      labels: ['Pop', 'Rock', 'MPB', 'Pagode', 'K-pop', 'Sertanejo', 'Hip hop', 'Funk'],
+      datasets: [{
+        label: {
+            dislay: false,
+        },
+        data: [20, 12, 25, 5, 2, 1, 20, 15],
+        borderWidth: 0,
+        backgroundColor: [
+        'rgba(81, 56, 61, 0.85)',
+        'rgba(41, 78, 167, 0.85)',
+        'rgba(129, 177, 225, 0.85)',
+        'rgba(233, 159, 38, 0.85)',
+        'rgba(74, 115, 211, 0.85)',
+        'rgba(32, 62, 131, 0.85)',
+        'rgba(244, 211, 94, 0.85)',
+        'rgba(37, 22, 5, 0.85)',
+        ],
+        borderColor: '#F6EED9',
+      }]
+    },
+    options: {
+        responsive: true,
+        borderWidth: 10,
+        plugins: {
+            legend: {
+                display: false,
+                position: 'right',
+            }
+        },
+        scales: {
+        r: {
+            dislay: false,
+            beginAtZero: true,
+            grid: {
+            circular: true,
+            lineWidth: 2,
+            suggestedMax: 25,
+            },
+            pointLabels: {
+                display: true,
+                centerPointLabels: true,
+            },
+            angleLines: {
+                display:true,
+                lineWidth: 1,
+            }
+        }
+      }
+    },
+  });
+
+  new Chart(ctxgeneros, {
+    type: 'bar',
+    data: {
+      labels: ['Pop', 'Rock', 'MPB', 'Pagode', 'K-pop', 'Sertanejo', 'Hip hop', 'Funk'],
+      datasets: [{
+        label: 'Porcentagem',
+        data: [30, 40, 19, 0, 3, 0, 8],
+        borderWidth: 0,
+        backgroundColor: [
+        'rgba(81, 56, 61, 0.85)',
+        'rgba(41, 78, 167, 0.85)',
+        'rgba(129, 177, 225, 0.85)',
+        'rgba(233, 159, 38, 0.85)',
+        'rgba(74, 115, 211, 0.85)',
+        'rgba(32, 62, 131, 0.85)',
+        'rgba(244, 211, 94, 0.85)',
+        'rgba(37, 22, 5, 0.85)',
+        ],
+        bordercolor: '#294EA7'
+      }]
+    },
+    options: {
+        indexAxis: 'y',
+        plugins: {
+            legend: {
+                display: true
+            }
+        },
+        scales: {
+        x: {
+            grid: {
+            drawOnChartArea: false,
+          }
+        },
+        y: {
+          beginAtZero: true,
+          suggestedMax: 40,
+          suggestedMin: 0,
+          grid: {
+            drawOnChartArea: false,
+          }
+        }
+      }
+    },
+  });
+</script>
+

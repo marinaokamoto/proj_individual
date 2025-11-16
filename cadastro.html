@@ -42,30 +42,39 @@
                         <div class="input" >
                             <span>nome:</span>
                             <input placeholder="insira seu nome"  type="text" id="input_nome">
+
+                            <div id="div_analisarNome" class="validacao"></div>
                         </div>
 
                         <div class="input" >
                             <span>email:</span>
-                            <input placeholder="insira seu email"  type="text" id="input_email">
+                            <input oninput="analisarEmail()" placeholder="insira seu email"  type="text" id="input_email">
+
+                            <div id="div_analisarEmail" class="validacao"></div>
+
                         </div>
                     </div>
 
                     <div  class="senhaconfirm" >
                         <div class="input" >
                             <span>senha:</span>
-                            <input placeholder="insira sua senha"  type="text" id="input_senha">
+                            <input oninput="analisarSenha()" placeholder="insira sua senha"  type="password" id="input_senha">
+
+                            <div id="div_analisarSenha" class="validacao" ></div>
                         </div>
 
                         <div class="input" >
                             <span>confirmar senha:</span>
-                            <input placeholder="confirme sua senha"  type="text" id="input_confirm">
+                            <input oninput="confirmSenha()" placeholder="confirme sua senha"  type="password" id="input_confirm">
+
+                            <div id="div_confirmSenha" class="validacao"></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="containerButton">
                     <div class="buttonCadastro">
-                        <a  href="login.html">cadastre-se</a>
+                        <a onclick="cadastrar()">cadastre-se</a>
                     </div>
                     <span><a href="login.html">já possui conta? <b>faça login!</b></a></span>
                 </div>
@@ -75,3 +84,79 @@
     </div>
 </body>
 </html>
+
+<script>
+    // lista dos parâmetros
+    var listaCaracteres = ['!','@','#','$', '%', '&', '*'];
+    var listaNumeros = ['1','2','3','4','5','6','7','8','9','0'];
+    
+    // lista de validações
+    var emailValido = false;
+    var senhaValida1 = false;
+    var senhaValida2 = false;
+    var confirmValida = false;
+
+    function analisarEmail() {
+        var email = input_email.value;
+        
+        if (!email.includes('@')) {
+            div_analisarEmail.innerHTML = 
+            `email inválido`;
+        } else {
+            div_analisarEmail.innerHTML = '';
+            emailValido = true;
+        }
+        
+    }
+    
+    function analisarSenha() {
+        var senha = input_senha.value;
+        var senhaTamanho = senha.length;
+        
+        for (var cont=0; cont<listaNumeros.length; cont++) {
+            if (senha.includes(listaNumeros[cont])) {
+                senhaValida1 = true;
+                div_analisarSenha.innerHTML = '';
+            }  
+        }
+
+        if (!senhaValida1){
+            div_analisarSenha.innerHTML = 
+            `senha inválida`
+        }
+
+        for (var cont2=0; cont2<listaCaracteres.length; cont2++) {
+            if (senha.includes(listaCaracteres[cont2])) {
+                senhaValida2 = true;
+                div_confirmSenha.innerHTML = '';
+            } 
+        }
+        
+        if (!senhaValida2) {
+            div_analisarSenha.innerHTML = 
+            `senha inválida`
+        }
+    }
+    
+    function confirmSenha() {
+        var senha = input_senha.value;
+        var confirm = input_confirm.value;
+
+        if (senha != confirm) {
+            div_confirmSenha.innerHTML = 
+            `senha inválida`
+        } else {
+            confirmValida = true;
+            div_confirmSenha.innerHTML = '';
+        }
+    }
+    
+    function cadastrar() {
+        if (emailValido && senhaValida1 && senhaValida2 && confirmValida) {
+            alert('Cadastro Efetuado!');
+            window.location.href ='login.html';
+        } else {
+            alert('Cadastro Inválido! Confira os campos');
+        }
+    }
+</script>
