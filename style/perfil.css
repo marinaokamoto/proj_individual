@@ -2,6 +2,7 @@ body {
     margin: 0px;
     font-family: Inter;
     background-color: #F6EED9;
+    color: #463337;
 }
 
 
@@ -44,21 +45,23 @@ body {
 
 /* INÍCIO DA TELA*/
 .tela{
-    background: #294EA7;
-    background: linear-gradient(180deg, rgba(41, 78, 167, 1) 0%, rgba(129, 177, 225, 1) 85%);
+    background: #204187;
+    background: linear-gradient(180deg, rgba(32, 65, 135, 1) 0%, rgba(41, 78, 167, 1) 31%, rgba(77, 146, 214, 1) 95%);
     width: 99vw;
-    height: 140vh;
+    height: 160vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 40px;
 }
 
-.container {
+.containertela {
     width: 90vw;
 }
 
 .tela1 {
-    background-color: cadetblue;
+    /* background-color: cadetblue; */
     height: 130vh;
     width: 100%;
 }
@@ -72,8 +75,8 @@ body {
 .graficos {
     height: 50%;
     width: 100%;
-    margin-top: 15px;
-    background-color: aqua;
+    margin-top: 40px;
+    /* background-color: aqua; */
     display: flex;
     justify-content: space-between;
 }
@@ -194,57 +197,156 @@ body {
 
 /* INÍCIO TELA2 */
 .tela2 {
-    height: 50vh;
-    background-color: brown;
-    padding-top: 30px;
+    height: 70vh;
+    /* background-color: brown; */
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.tabelaHistorico {
-    background-color: #294EA7;
-    width: 60%;
+.kpiArtistas {
+    width: 37%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.artistaMais {
+    width: 100%;
+    height: 47%;
+    background-color: #20418f; 
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.artistaMenos {
+    width: 100%;
+    height: 47%;
+    background-color: #463337; 
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.legenda {
+    width: 50%;
+    /* background-color: darkgreen; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+.legenda span {
+    color: #F6EED9;
+    font-family: Inter;
+    font-size: 24px;
+}
+
+.nome span {
+    font-family: JetBrains Mono;
+    font-size: 27px;
+}
+
+.foto {
+    width: 50%;
+}
+
+.artistaFoto {
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/* INÍCIO TABELAS */
+.tabelaHistorico {
+    width: 60%;
+    height: 90%;
+    /* background-color: blueviolet; */
 }
 
 table {
     border-collapse: collapse;
-    background-color: aqua;
     width: 100%;
     height: 100%;
 }
 
 thead {
-    background-color: #EEDEAE;
-    height: 50px;
+    height: 80px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    /* background-color: #81B1E1; */
 }
 
-tr {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 5px 10px 5px 10px;
-}
-
-td {
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-}
-
-.tabelaCabecalho {
-    width: 80%;
-}
-
-.tabelaBody {
-    background-color: blueviolet;
+tbody {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; 
+    text-align: center;
+    width: 100%;
+    /* background-color: chocolate; */
 }
 
-.trContainer {
-    width: 80%;
+th {
+    width: 250px;
+    height: 40px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #EEDEAE;
+    letter-spacing: 2px;
 }
+
+tr {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0px 10px 0px;
+}
+
+td {
+    width: 250px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.genero {
+    font-family: JetBrains Mono;
+    font-size: 28px;
+}
+
+.trContainer1 {
+    background-color: #F6EED9;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.trContainer2 {
+    background-color: #EEDEAE;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.trContainer3 {
+    background-color: #81B1E1;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.trContainer4 {
+    background-color: #294EA7;
+    border-radius: 10px;
+    color: #F6EED9;
+}
+
