@@ -12,12 +12,15 @@ body {
     height: 10vh;
     display: flex;
     align-items: center;
-    
+}
+
+.headerHamburguer {
+    z-index: 100;
 }
 
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     width: 100vw;
     height: 50px;
@@ -29,11 +32,7 @@ body {
     font-family: JetBrains Mono;
     font-size: 32px;
     color: #463337;
-}
-
-.title:hover {
-    transform: scale(1.1);
-    cursor: pointer;
+    margin-left: 10px;
 }
 
 .title a{
@@ -44,29 +43,56 @@ body {
 }
 
 /* HAMBURGUER MENU */
-.title img {
+.overlayUser {
+    position: absolute;
+    z-index: 10;
+    height: 100vh;
+    width: 99vw;
+}
+
+.container img {
     width: 30px;
-    height: 25px;
+    height: 30px;
+}
+
+.container img:hover {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
 }
 
 .fundo {
-    background-color: #294EA7;
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    height: 35vh;
     width: 15vw;
     z-index: 10;
-    position: absolute;
+    position: fixed;
+    justify-content: space-between;
+    background-color: #294EA7;
 }
 
 .listaConteudo li {
-    list-style: none;
+    list-style-type: disc;
+    height: 8vh;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 a {
     text-decoration: none;
     color: #F6EED9;
     font-size: 20px;
+}
+
+.sairFundo {
+    background-color: #81B1E1;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* INÍCIO DA TELA*/

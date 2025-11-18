@@ -12,18 +12,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
 
 </head>
-<body>
+<body onscroll="esconderModal()">
+    <div id="overlayUser" class="overlayUser" onclick="esconderModal()"></div>
+
+    <div class="headerHamburguer">
     <div class="header"  id="header">  
        <div class="container" >
+           <img onclick="mostrarHamburguer()" src="assets/icons/Menu.png" alt="">
             <div class="title">
-            <img onclick="hamburguer()" src="assets/icons/Menu.png" alt="">
-            <a href="home.html">MUSiCA</a>
+            <a href="perfil.html">MUSiCA</a>
             </div>
         </div>
     </div>
 
-    <div id="div_hamburguer"></div>
-    <div class="tela">
+    <div id="div_hamburguer" class="fundo">
+            <div class="listaFundo">
+                <div class="listaConteudo">
+                    <li><a href="perfil.html">- Início</a></li>
+                    <li><a href="">- Quiz</a></li>
+                    <li><a href="">- Álbuns</a></li>
+                </div>
+            </div>
+            <div class="sairFundo">
+                <a href="login.html">sair</a>
+            </div>
+    </div>
+    </div>
+
+    <div id="div_tela"  class="tela">
         <div class="containertela">
 
             <div class="tela1">
@@ -118,6 +134,7 @@
             </div>
         </div>
     </div>
+    
 </body>
 </html>
 
@@ -126,15 +143,19 @@
 
 <!-- GRAFICOS-->
 <script>
-  const ctxgeral = document.getElementById('graficoGeral');
-  const ctxgeneros = document.getElementById('graficoGeneros');
-
-  new Chart(ctxgeral, {
-    type: 'polarArea',
-    data: {
+    overlayUser.style.display = 'none';
+    div_hamburguer.style.display = 'none';
+    
+    
+    const ctxgeral = document.getElementById('graficoGeral');
+    const ctxgeneros = document.getElementById('graficoGeneros');
+    
+    new Chart(ctxgeral, {
+        type: 'polarArea',
+        data: {
       labels: ['Pop', 'Rock', 'MPB', 'Pagode', 'K-pop', 'Sertanejo', 'Hip hop', 'Funk'],
       datasets: [{
-        label: {
+          label: {
             dislay: false,
         },
         data: [20, 12, 25, 5, 2, 1, 20, 15],
@@ -150,7 +171,7 @@
         'rgba(37, 22, 5, 0.85)',
         ],
         borderColor: '#F6EED9',
-      }]
+    }]
     },
     options: {
         responsive: true,
@@ -162,36 +183,36 @@
             }
         },
         scales: {
-        r: {
-            dislay: false,
-            beginAtZero: true,
-            grid: {
-            circular: true,
-            lineWidth: 2,
-            suggestedMax: 25,
-            },
-            pointLabels: {
-                display: true,
-                centerPointLabels: true,
+            r: {
+                dislay: false,
+                beginAtZero: true,
+                grid: {
+                    circular: true,
+                    lineWidth: 2,
+                    suggestedMax: 25,
+                },
+                pointLabels: {
+                    display: true,
+                    centerPointLabels: true,
             },
             angleLines: {
                 display:true,
                 lineWidth: 1,
             }
         }
-      }
-    },
-  });
+    }
+},
+});
 
-  new Chart(ctxgeneros, {
+new Chart(ctxgeneros, {
     type: 'bar',
     data: {
-      labels: ['Pop', 'Rock', 'MPB', 'Pagode', 'K-pop', 'Sertanejo', 'Hip hop', 'Funk'],
-      datasets: [{
-        label: 'Porcentagem',
-        data: [30, 40, 19, 0, 3, 0, 8],
-        borderWidth: 0,
-        backgroundColor: [
+        labels: ['Pop', 'Rock', 'MPB', 'Pagode', 'K-pop', 'Sertanejo', 'Hip hop', 'Funk'],
+        datasets: [{
+            label: 'Porcentagem',
+            data: [30, 40, 19, 0, 3, 0, 8],
+            borderWidth: 0,
+            backgroundColor: [
         'rgba(81, 56, 61, 0.85)',
         'rgba(41, 78, 167, 0.85)',
         'rgba(129, 177, 225, 0.85)',
@@ -200,52 +221,44 @@
         'rgba(32, 62, 131, 0.85)',
         'rgba(244, 211, 94, 0.85)',
         'rgba(37, 22, 5, 0.85)',
-        ],
+    ],
         bordercolor: '#294EA7',
         barThickness: '20',
-      }]
-    },
-    options: {
-        indexAxis: 'y',
-        plugins: {
+    }]
+},
+options: {
+    indexAxis: 'y',
+    plugins: {
             legend: {
                 display: true
             }
         },
         scales: {
-        x: {
-            grid: {
-            drawOnChartArea: false,
-          }
-        },
-        y: {
-          beginAtZero: true,
-          suggestedMax: 40,
-          suggestedMin: 0,
-          grid: {
-            drawOnChartArea: false,
-          }
+            x: {
+                grid: {
+                    drawOnChartArea: false,
+                }
+            },
+            y: {
+                beginAtZero: true,
+                suggestedMax: 40,
+                suggestedMin: 0,
+                grid: {
+                    drawOnChartArea: false,
+                }
+            }
         }
-      }
     },
   });
-</script>
-
-<script>
-    function hamburguer() {
-        div_hamburguer.innerHTML = 
-        `<div id="div_hamburguer" class="fundo">
-            <div class="listaFundo">
-                <div class="listaConteudo">
-                    <li><a href="perfil.html">Início</a></li>
-                    <li><a href="">Quiz</a></li>
-                    <li><a href="">Álbuns</a></li>
-                </div>
-            </div>
-            <div class="sairFundo">
-                <a href="login.html">sair</a>
-            </div>
-        </div>`
-    }
+  
+  function mostrarHamburguer() {
+      overlayUser.style.display = 'block';
+      div_hamburguer.style.display = 'flex';
+  }
+  
+  function esconderModal() {
+      div_hamburguer.style.display = 'none';
+      overlayUser.style.display = 'none';
+  }
 </script>
 
