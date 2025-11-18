@@ -43,6 +43,32 @@ body {
     text-decoration: none;
 }
 
+/* HAMBURGUER MENU */
+.title img {
+    width: 30px;
+    height: 25px;
+}
+
+.fundo {
+    background-color: #294EA7;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    width: 15vw;
+    z-index: 10;
+    position: absolute;
+}
+
+.listaConteudo li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #F6EED9;
+    font-size: 20px;
+}
+
 /* INÍCIO DA TELA*/
 .tela{
     background: #204187;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
 
     <link rel="stylesheet" href="style/perfil.css">
 
@@ -16,11 +16,13 @@
     <div class="header"  id="header">  
        <div class="container" >
             <div class="title">
+            <img onclick="hamburguer()" src="assets/icons/Menu.png" alt="">
             <a href="home.html">MUSiCA</a>
             </div>
         </div>
     </div>
 
+    <div id="div_hamburguer"></div>
     <div class="tela">
         <div class="containertela">
 
@@ -227,5 +229,23 @@
       }
     },
   });
+</script>
+
+<script>
+    function hamburguer() {
+        div_hamburguer.innerHTML = 
+        `<div id="div_hamburguer" class="fundo">
+            <div class="listaFundo">
+                <div class="listaConteudo">
+                    <li><a href="perfil.html">Início</a></li>
+                    <li><a href="">Quiz</a></li>
+                    <li><a href="">Álbuns</a></li>
+                </div>
+            </div>
+            <div class="sairFundo">
+                <a href="login.html">sair</a>
+            </div>
+        </div>`
+    }
 </script>
 
