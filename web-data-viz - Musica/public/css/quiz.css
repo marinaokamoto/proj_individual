@@ -1,0 +1,266 @@
+body {
+    margin: 0px;
+    font-family: Inter;
+    font-size: 20px;
+    background-color: #294EA7;
+    color: #F6EED9;
+}
+
+
+/* INÍCIO DA HEADER/NAVBAR */
+.header {
+    background-color: #EEDEAE;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.headerHamburguer {
+    z-index: 100;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+    height: 50px;
+    padding: 0px 40px 0px 40px;
+    /*top right bottom left*/
+}
+
+.title {
+    font-family: JetBrains Mono;
+    font-size: 32px;
+    color: #463337;
+    margin-left: 10px;
+}
+
+.title a{
+    font-family: JetBrains Mono;
+    font-size: 32px;
+    color: #463337;
+    text-decoration: none;
+}
+
+/* HAMBURGUER MENU */
+.overlayUser {
+    position: absolute;
+    z-index: 10;
+    height: 100vh;
+    width: 99vw;
+}
+
+.container img {
+    width: 30px;
+    height: 30px;
+}
+
+.container img:hover {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.fundo {
+    display: flex;
+    flex-direction: column;
+    height: 35vh;
+    width: 15vw;
+    z-index: 10;
+    position: fixed;
+    justify-content: space-between;
+    background-color: #294EA7;
+}
+
+.listaConteudo li {
+    list-style-type: disc;
+    height: 8vh;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: #F6EED9;
+    font-size: 20px;
+}
+
+.sairFundo {
+    background-color: #81B1E1;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* INÍCIO TELA */
+.tela {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerTela {
+    width: 90vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tudo {
+    width: 90vw;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.buttonIniciar {
+    height: 50px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: JetBrains Mono;
+    font-size: 22px;
+    border-radius: 15px;
+    background-color: #F6EED9;
+    color: #294EA7;
+    border-style: none;
+}
+
+.buttonIniciar:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* INÍCIO QUIZ */
+.cardAlbum {
+    background-color: #F6EED9;
+    height: 100%;
+    width: 30vw;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.questao {
+    height: 60vh;
+}
+
+.play {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    /* background-color: blueviolet; */
+}
+
+.album {
+    width: 30vw;
+    height: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.barra {
+    padding-top: 20px;
+    width: 80%;
+}
+
+.btn {
+    transform: scale(1.1);
+    cursor: pointer;  
+}
+
+.infoAlternativas {
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+.pontuacao {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #81B1E1;
+    color: #463337;
+    padding: 10px;
+    padding-left: 20px;
+    padding-top: 20px;
+    border-radius: 15px;
+}
+
+.tocando {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    gap: 10px;
+    color: #294EA7; 
+    font-weight: bold;
+    font-size: 24px;
+}
+
+
+.acertosErros {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.enunciado {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 24px;
+}
+
+.opcoes {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: space-between;
+    font-size: 22px;
+}
+
+.botoes {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.button {
+    width: 200px;
+    height: 50px;
+    font-family: JetBrains Mono;
+    font-size: 16px;
+    border-radius: 15px;
+    border-style: none;
+    background-color: #EEDEAE;
+    color: #463337;
+}

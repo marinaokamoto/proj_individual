@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MUSiCA | Login</title>
+
+    <script src="./js/sessao.js"></script>
+
+    <link rel="stylesheet" href="css/loginstyle.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="header"  id="header">  
+        <div class="container" >
+            <div class="title">
+            <a href="index.html">MUSiCA</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="tela1">
+        <div class="xadrez"><img src="assets/xadrezE.png" alt=""></div>
+        <div class="card">
+            <div class="bemvindo">
+                <span>bem-vindo!</span>
+            </div>
+
+            <div class="resto">
+                <div class="input">
+                    <span>email:</span>
+                    <input placeholder="insira seu email" type="text" id="input_email">
+                </div>
+
+                <div class="input">
+                    <span>senha:</span>
+                    <input placeholder="insira sua senha" type="password" id="input_senha">
+                </div>
+
+                <div class="containerButton">
+                    <div onclick="entrar()" class="buttonLogin">
+                        <span>entrar</span>
+                    </div>
+                    
+                    <div class="registro">
+                    <a href="cadastro.html">não tem cadastro?<b> registre-se!</b></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+         <div class="xadrez"><img src="assets/xadrezD.png" alt=""></div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function entrar() {
+        // aguardar();
+
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            alert('Insira valores nos campos')
+            // finalizarAguardar();
+            return false;
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/dashboard.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    // finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+</script>
