@@ -30,9 +30,9 @@
     <div id="div_hamburguer" class="fundo">
             <div class="listaFundo">
                 <div class="listaConteudo">
-                    <li><a href="dashboard/dashboard.html">- Início</a></li>
-                    <li><a href="">- Quiz</a></li>
-                    <li><a href="">- Álbuns</a></li>
+                    <li><a href="dashboard/dashboard.html">𝄞 &nbsp Início</a></li>
+                    <li><a href="">♩ &nbsp Quiz</a></li>
+                    <li><a href="">♪ &nbsp Álbuns</a></li>
                 </div>
             </div>
             <div class="sairFundo">
@@ -52,7 +52,7 @@
                 <div class="questao">
                     <span id="spanQuestaoExibida"></span>
                 </div>
-                <img class="barra" src="assets/Group 8.png" alt="">
+                <img id="barra" class="barra" src="" alt="">
                 <div class="play">
                     <img width="70px" src="assets/icons/back.png" alt="">
                     <img width="70px" src="assets/icons/Circled Play Button.png" alt="">
@@ -102,9 +102,9 @@
 
                     <div id="botoes" class="botoes">
                         <button onclick="submeter()" id="btnSubmeter" class="button">Submeter resposta</button>
-                        <button onclick="avancar()" id="btnProx" class="button">Avançar para próxima questão</button>
-                        <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
+                        <button onclick="avancar()" id="btnProx" class="button">Avançar</button>
                         <button onclick="tentarNovamente()" id="btnTentarNovamente" class="button">Tentar novamente</button>
+                        <div id="div_dashboard"></div>
                     </div>
                 </div>
             </div>
@@ -127,7 +127,8 @@
             alternativaB: "SOS - SZA",
             alternativaC: "ASTROWORLD - Travis Scott",
             alternativaD: "CAJU - Liniker",
-            alternativaCorreta: "alternativaB"
+            alternativaCorreta: "alternativaB",
+            genero: "pop"
         },
 
         {
@@ -136,7 +137,8 @@
             alternativaB: "Midnights - Taylor Swift",
             alternativaC: "Charm - Clairo",
             alternativaD: "Monomania - Clarice Falcão",
-            alternativaCorreta: "alternativaC"
+            alternativaCorreta: "alternativaC",
+            genero: "indie"
         },
 
         {
@@ -145,7 +147,38 @@
             alternativaB: "Blurryface - Twenty One Pilots",
             alternativaC: "Máquina do Tempo - Matuê",
             alternativaD: "Goodbye & Good Riddance - Juice WRLD",
-            alternativaCorreta: "alternativaA"
+            alternativaCorreta: "alternativaA",
+            genero: "hiphop"
+        },
+
+        {
+            pergunta: "<img class='album' src='assets/quiz/realidade.png'>",
+            alternativaA: "A New Dream - Taylor Swift",
+            alternativaB: "Novas Histórias - Henrique e Juliano",
+            alternativaC: "Realidade - Marília Mendonça",
+            alternativaD: "Be the Cowboy - Mitski",
+            alternativaCorreta: "alternativaC",
+            genero: "sertanejo"
+        },
+
+        {
+            pergunta: "<img class='album' src='assets/quiz/anitta.jpg'>",
+            alternativaA: "Show das Poderosas - Anitta",
+            alternativaB: "Versions of Me - Anitta",
+            alternativaC: "Ritmo Perfeito - Anitta",
+            alternativaD: "Anitta - Anitta",
+            alternativaCorreta: "alternativaD",
+            genero: "funk"
+        },
+
+        {
+            pergunta: "<img class='album' src='assets/quiz/chico.png'>",
+            alternativaA: "Clube da Esquina - Milton Nascimento & Lô Borges",
+            alternativaB: "Chico Buarque - Chico Buarque",
+            alternativaC: "Expresso 2222 - Gilberto Gi",
+            alternativaD: "Amarelo - Emicida",
+            alternativaCorreta: "alternativaB",
+            genero: "mpb"
         },
 
         {
@@ -154,7 +187,8 @@
             alternativaB: "DON'T TAP THE GLASS - Tyler, The Creator",
             alternativaC: "STRATEGY - TWICE",
             alternativaD: "From Zero - Linkin Park",
-            alternativaCorreta: "alternativaD"
+            alternativaCorreta: "alternativaD",
+            genero: "rock"
         },
 
         {
@@ -163,7 +197,8 @@
             alternativaB: "Eu Venci o Mundo - Veigh",
             alternativaC: "Right Place, Wrong Person - RM",
             alternativaD: "Esquinas - ANAVITÓRIA",
-            alternativaCorreta: "alternativaB"
+            alternativaCorreta: "alternativaB",
+            genero: "hiphop"
         },
 
         {
@@ -172,7 +207,8 @@
             alternativaB: "THE ALBUM - BLACKPINK",
             alternativaC: "Turma da Duq - Duquesa",
             alternativaD: "SOUR - Olivia Rodrigo",
-            alternativaCorreta: "alternativaB" 
+            alternativaCorreta: "alternativaB",
+            genero: "kpop"
         },
 
         {
@@ -181,16 +217,28 @@
             alternativaB: "BalacoBaco - Rita Lee, Roberto de Carvalho",
             alternativaC: "Self Control - Frank Ocean",
             alternativaD: "Lungs - Florence + The Machine",
-            alternativaCorreta: "alternativaA" 
+            alternativaCorreta: "alternativaA",
+            genero: "indie"
         },
 
         {
             pergunta: "<img class='album' src='assets/quiz/luan_lua.png'>",
             alternativaA: "Coisas Naturais - Marina Sena",
             alternativaB: "Moon - Daniel Caesar",
-            alternativaC: "LUAN AO VIVO NA LUA - Luan Santana",
+            alternativaC: "AO VIVO NA LUA - Luan Santana",
             alternativaD: "Be the Cowboy - Mitski",
-            alternativaCorreta: "alternativaC" 
+            alternativaCorreta: "alternativaC",
+            genero: "sertanejo"
+        },
+
+        {
+            pergunta: "<img class='album' src='assets/quiz/chappelroan.png'>",
+            alternativaA: "The Rise and Fall of a Midwest Princess - Chappel Roan",
+            alternativaB: "Make you Mine - Madison Beer",
+            alternativaC: "Abracadabra - Lady Gaga",
+            alternativaD: "Radical Optism - Dua Lipa",
+            alternativaCorreta: "alternativaA",
+            genero: "pop"
         },
 
         {
@@ -199,7 +247,18 @@
             alternativaB: "333 - Matuê",
             alternativaC: "WE DON'T TRUST YOU - Metro Boomin",
             alternativaD: "Avisa que é o funk - MC Hariel",
-            alternativaCorreta: "alternativaD" 
+            alternativaCorreta: "alternativaD",
+            genero: "funk"
+        },
+
+        {
+            pergunta: "<img class='album' src='assets/quiz/fallen.png'>",
+            alternativaA: "Toxicity - System of a Down",
+            alternativaB: "Fallen - Evanescence",
+            alternativaC: "Back in Black - AC/DC",
+            alternativaD: "Minutes to Midnight - Linkin Park",
+            alternativaCorreta: "alternativaB",
+            genero: "rock"
         },
 
         {
@@ -208,19 +267,57 @@
             alternativaB: "Tribalistas - Tribalistas",
             alternativaC: "Caravanas - Chico Buarque",
             alternativaD: "Luar - Gilberto Gil",
-            alternativaCorreta: "alternativaB" 
+            alternativaCorreta: "alternativaB",
+            genero: "mpb"
+        },
+
+        {
+            pergunta: "<img class='album' src='assets/quiz/newjeans_getup.jpg'>",
+            alternativaA: "Hold the Girl - Rina Sawayama",
+            alternativaB: "Emotion - Carly Rae Jepsen",
+            alternativaC: "LP1 - FKA Twigs",
+            alternativaD: "Get Up - NewJeans",
+            alternativaCorreta: "alternativaD",
+            genero: "kpop"
         },
     ]
 
     // variáveis globais    
-    let numeroDaQuestaoAtual = 0
-    let pontuacaoFinal = 0
-    let tentativaIncorreta = 0
-    let certas = 0
-    let erradas = 0
-    let quantidadeDeQuestoes = listaDeQuestoes.length
-    // let isUltima = numeroDaQuestaoAtual == quantidadeDeQuestoes-1 ? true : false
-
+    let numeroDaQuestaoAtual = 0;
+    let pontuacaoFinal = 0;
+    let tentativaIncorreta = 0;
+    let certas = 0;
+    let erradas = 0;
+    let quantidadeDeQuestoes = listaDeQuestoes.length;
+    let generosPontos = {
+        indie: 0,
+        hiphop: 0,
+        rock: 0,
+        funk: 0,
+        pop: 0,
+        mpb: 0,
+        sertanejo: 0,
+        kpop: 0
+    };
+    let barra = {
+        0: "assets/icons/barra1.png",
+        1: "assets/icons/barra2.png",
+        2: "assets/icons/barra3.png",
+        3: "assets/icons/barra4.png",
+        4: "assets/icons/barra5.png",
+        5: "assets/icons/barra6.png",
+        6: "assets/icons/barra7.png",
+        7: "assets/icons/barra8.png",
+        8: "assets/icons/barra9.png",
+        9: "assets/icons/barra10.png",
+        10: "assets/icons/barra11.png", 
+        11: "assets/icons/barra12.png",
+        12: "assets/icons/barra13.png",
+        13: "assets/icons/barra14.png",
+        14: "assets/icons/barra15.png",
+        15:"assets/icons/barra16.png"
+    }
+    
     function onloadEsconder() {
         document.getElementById('pontuacao').style.display = "none"
         document.getElementById('jogo').style.display = "none"
@@ -237,7 +334,6 @@
 
         btnSubmeter.disabled = false
         btnProx.disabled = true
-        // btnConcluir.disabled = true
         btnTentarNovamente.disabled = true
     }
 
@@ -245,8 +341,9 @@
         habilitarAlternativas(true)
         const questaoAtual = listaDeQuestoes[index]
         numeroDaQuestaoAtual = index
-        console.log("questaoAtual")
-        console.log(questaoAtual)
+        console.log("questaoAtual");
+        console.log(questaoAtual);
+        document.getElementById("barra").src = barra[numeroDaQuestaoAtual];
         document.getElementById("spanNumeroDaQuestaoAtual").innerHTML = Number(index) + 1 // ajustando porque o index começa em 0
         document.getElementById("spanQuestaoExibida").innerHTML = questaoAtual.pergunta;
         document.getElementById("labelOpcaoUm").innerHTML = questaoAtual.alternativaA;
@@ -303,7 +400,6 @@
         } else {
             finalizarJogo()
         }
-        limparCoresBackgroundOpcoes()
     }
 
     function tentarNovamente() {
@@ -314,6 +410,7 @@
     function checarResposta() {
         const questaoAtual = listaDeQuestoes[numeroDaQuestaoAtual] // questão atual 
         const respostaQuestaoAtual = questaoAtual.alternativaCorreta // qual é a resposta correta da questão atual
+        const genero = questaoAtual.genero
 
         const options = document.getElementsByName("option"); // recupera alternativas no html
 
@@ -327,31 +424,26 @@
         })
 
         // verifica se resposta assinalada é correta
-        options.forEach((option) => {
+        options.forEach((option) => { // se certa
             if (option.checked === true && option.value === respostaQuestaoAtual) {
-                document.getElementById(alternativaCorreta).classList.add("text-success-with-bg")
-                pontuacaoFinal++
-                certas++
-                document.getElementById("spanCertas").innerHTML = certas
-                numeroDaQuestaoAtual++
-            } else if (option.checked && option.value !== respostaQuestaoAtual) {
-                const wrongLabelId = option.labels[0].id
+                document.getElementById(alternativaCorreta)
+                pontuacaoFinal++;
+                certas++;
+                document.getElementById("spanCertas").innerHTML = certas;
+                numeroDaQuestaoAtual++;
+                generosPontos[genero]++;
 
-                document.getElementById(wrongLabelId).classList.add("text-danger-with-bg")
-                document.getElementById(alternativaCorreta).classList.add("text-success-with-bg")
+            } else if (option.checked && option.value !== respostaQuestaoAtual) {
+                const wrongLabelId = option.labels[0].id // se errada
+
+                document.getElementById(wrongLabelId)
+                document.getElementById(alternativaCorreta)
                 tentativaIncorreta++
                 erradas++
                 document.getElementById("spanErradas").innerHTML = erradas
-                numeroDaQuestaoAtual++
+                numeroDaQuestaoAtual++;
+                generosPontos[genero]--;
             }
-        })
-    }
-
-    function limparCoresBackgroundOpcoes() {
-        const options = document.getElementsByName("option");
-        options.forEach((option) => {
-            document.getElementById(option.labels[0].id).classList.remove("text-danger-with-bg")
-            document.getElementById(option.labels[0].id).classList.remove("text-success-with-bg")
         })
     }
 
@@ -364,36 +456,120 @@
 
     function finalizarJogo() {
         let textoParaMensagemFinal = null
-        let classComCoresParaMensagemFinal = null
+
         const porcentagemFinalDeAcertos = pontuacaoFinal / quantidadeDeQuestoes
 
         if (porcentagemFinalDeAcertos <= 0.3) {
             textoParaMensagemFinal = "Parece que você não estudou..."
-            classComCoresParaMensagemFinal = "text-danger-with-bg"
         }
         else if (porcentagemFinalDeAcertos > 0.3 && porcentagemFinalDeAcertos < 0.9) {
             textoParaMensagemFinal = "Pode melhorar na próxima, hein!"
-            classComCoresParaMensagemFinal = "text-warning-with-bg"
         }
         else if (porcentagemFinalDeAcertos >= 0.9) {
             textoParaMensagemFinal = "Uau, parabéns!"
-            classComCoresParaMensagemFinal = "text-success-with-bg"
         }
 
         textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos)*100) + "% das questões."
 
 
         document.getElementById('msgFinal').innerHTML = textoParaMensagemFinal
-        document.getElementById('msgFinal').classList.add(classComCoresParaMensagemFinal) 
+        document.getElementById('msgFinal')
         document.getElementById('spanPontuacaoFinal').innerHTML = pontuacaoFinal
 
-        document.getElementById('jogo').classList.add("text-new-gray") 
+        document.getElementById('jogo');
 
-        btnProx.disabled = true
-        btnSubmeter.disabled = true
-        // btnConcluir.disabled = true
-        btnTentarNovamente.disabled = false
+        div_dashboard.innerHTML = 
+        `<button class="button" onclick="window.location.href='/dashboard/dashboard.html'">Dashboard</button>`;
 
+        btnProx.disabled = true;
+        btnSubmeter.disabled = true;
+        btnTentarNovamente.disabled = false;
+
+        resultados();
+
+    }
+
+    function resultados() {
+    let mais = -16;
+    let menos = 16;
+
+    let generoMais = '';
+    let generoMenos = '';
+
+    let listageneroMais = [];
+    let listageneroMenos = [];
+
+    for (let genero in generosPontos) {
+        let pontos = generosPontos[genero];
+
+        if (pontos > mais) {
+            mais = pontos; // redefinindo a variavel mais com o valor mais acertado pelo user acessado no json generoPontos
+            generoMais = genero;
+
+            if (pontos == 2) {
+                listageneroMais.push(genero)
+            }
+
+        } else if (pontos == mais) {
+            listageneroMais.push(genero);
+        }
+        
+        if (pontos < menos) {
+            menos = pontos;
+            generoMenos = genero;
+
+            if (pontos == -2) {
+                listageneroMenos.push(genero);    
+            }
+        } else if (pontos == menos) {
+            listageneroMenos.push(genero);
+        }
+    };
+
+    // qtde de generos empatados
+    var qtdEmpateMais = listageneroMais.length; // dos mais acertados
+    var qtdEmpateMenos = listageneroMenos.length; // dos menos acertados
+
+    var desempateMais = Math.floor(Math.random()*qtdEmpateMais); // desempate aleatorio
+    generoMais = listageneroMais[desempateMais];
+
+    var desempateMenos = Math.floor(Math.random()*qtdEmpateMenos); // desempate aleatorio
+    generoMenos = listageneroMenos[desempateMenos];
+
+    registrarBD(generoMais, generoMenos);
+    }
+
+    function registrarBD(generoMais, generoMenos) {
+        console.log("Registrando resultado do quiz: gênero que mais acertou: ", generoMais, " gênero que mais errou: ", generoMenos);
+
+        // capturando os dados do usuário direto no session storage
+        var fkUsuario = sessionStorage.ID_USUARIO;
+        console.log("ID_USUARIO no sessionStorage:", fkUsuario);
+
+        // validações de usuário e resultado
+        if (!fkUsuario || fkUsuario === "undefined") {
+            console.log("Usuário não identificado. Não será registrado no servidor.");
+            return;
+        }
+
+        if (generoMais == "" || generoMenos == "") {
+        console.log('ERRO EM CAPTURAR OS VALORES');
+        }
+
+        // Enviando o valor da nova input
+        fetch("/quiz/registrar", { // endpoint definido no arqv rota: quiz.js  
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/quiz.js
+            idUsuarioServer: fkUsuario,
+            generoMaisServer: generoMais,
+            generoMenosServer: generoMenos
+        }),
+        })
     }
 
     function mostrarHamburguer() {
@@ -405,4 +581,5 @@
       div_hamburguer.style.display = 'none';
       overlayUser.style.display = 'none';
     }
+
 </script>
