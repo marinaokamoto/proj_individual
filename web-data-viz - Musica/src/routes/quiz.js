@@ -8,8 +8,5 @@ router.post("/registrar", function (req, res) {
     quizController.registrar(req, res);
 })
 
-// router.post("/autenticar", function (req, res) {
-//     usuarioController.autenticar(req, res);
-// });
 
 module.exports = router;

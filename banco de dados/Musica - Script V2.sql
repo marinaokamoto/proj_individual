@@ -58,6 +58,7 @@ CREATE TABLE Resultado (
 		FOREIGN KEY fkUsuarioResultado (fkUsuario) REFERENCES Usuario(idUsuario),
 	generoMais varchar(45),
 	generoMenos varchar(45),
+    data DATETIME DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT pkCompostaTentativa
 		PRIMARY KEY (idResultado, fkQuiz, fkUsuario)
 );
@@ -114,4 +115,20 @@ insert into Album (nome, dtLancamento, fkArtista, fkGenero, fkQuiz) VALUES
     
 select *from Resultado;
 select *from Usuario;
+
+-- KPI1
+SELECT 
+    generoMais AS genero,
+    COUNT(*) / (SELECT COUNT(*) FROM Resultado) *100 AS porcentagem
+FROM Resultado
+GROUP BY generoMais;
+
+-- KPI 2
+SELECT 
+	generoMais as genero,
+	COUNT(*) AS qtd
+FROM Resultado
+WHERE fkUsuario = 1
+GROUP BY generoMais;
+
     

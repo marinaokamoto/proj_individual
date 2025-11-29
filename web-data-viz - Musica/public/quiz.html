@@ -30,8 +30,8 @@
     <div id="div_hamburguer" class="fundo">
             <div class="listaFundo">
                 <div class="listaConteudo">
-                    <li><a href="dashboard/dashboard.html">𝄞 &nbsp Início</a></li>
-                    <li><a href="">♩ &nbsp Quiz</a></li>
+                    <li><a href="quiz.html">𝄞 &nbsp Quiz</a></li>
+                    <li><a href="dashboard/dashboard.html">♩ &nbsp Dashboard</a></li>
                     <li><a href="">♪ &nbsp Álbuns</a></li>
                 </div>
             </div>
@@ -537,6 +537,17 @@
     generoMenos = listageneroMenos[desempateMenos];
 
     registrarBD(generoMais, generoMenos);
+
+    // registrar o resultado do quiz no session storage:
+    let resultadoQuiz = {
+    generoMais: generoMais,
+    generoMenos: generoMenos,
+    acertos: pontuacaoFinal,
+    total: quantidadeDeQuestoes
+    };
+
+    sessionStorage.setItem("RESULTADO_QUIZ", JSON.stringify(resultadoQuiz));
+
     }
 
     function registrarBD(generoMais, generoMenos) {
