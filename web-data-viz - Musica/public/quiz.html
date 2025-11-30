@@ -536,7 +536,7 @@
     var desempateMenos = Math.floor(Math.random()*qtdEmpateMenos); // desempate aleatorio
     generoMenos = listageneroMenos[desempateMenos];
 
-    registrarBD(generoMais, generoMenos);
+    registrarBD(generoMais, generoMenos, pontuacaoFinal);
 
     // registrar o resultado do quiz no session storage:
     let resultadoQuiz = {
@@ -550,7 +550,7 @@
 
     }
 
-    function registrarBD(generoMais, generoMenos) {
+    function registrarBD(generoMais, generoMenos, pontuacaoFinal) {
         console.log("Registrando resultado do quiz: gênero que mais acertou: ", generoMais, " gênero que mais errou: ", generoMenos);
 
         // capturando os dados do usuário direto no session storage
@@ -578,7 +578,8 @@
             // Agora vá para o arquivo routes/quiz.js
             idUsuarioServer: fkUsuario,
             generoMaisServer: generoMais,
-            generoMenosServer: generoMenos
+            generoMenosServer: generoMenos,
+            pontuacaoServer: pontuacaoFinal
         }),
         })
     }

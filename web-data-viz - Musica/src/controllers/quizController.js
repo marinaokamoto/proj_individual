@@ -4,8 +4,9 @@ function registrar(req, res) {
     var fkUsuario = req.body.idUsuarioServer;
     var generoMais = req.body.generoMaisServer;
     var generoMenos = req.body.generoMenosServer;
+    var pontuacao = req.body.pontuacaoServer;
 
-    quizModel.registrarGeneros(fkUsuario, generoMais, generoMenos)
+    quizModel.registrarGeneros(fkUsuario, generoMais, generoMenos, pontuacao)
         .then(
             function (resultado) {
                 res.json(resultado);

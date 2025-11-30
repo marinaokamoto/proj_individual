@@ -41,13 +41,13 @@
         <div id="div_hamburguer" class="fundo">
             <div class="listaFundo">
                 <div class="listaConteudo">
-                    <li><a href="perfil.html">𝄞 &nbsp Início</a></li>
-                    <li><a href="../quiz.html">♩ &nbsp Quiz</a></li>
+                    <li><a href="../quiz.html">𝄞 &nbsp Quiz</a></li>
+                    <li><a href="dashboard.html">♩ &nbsp Dashboard</a></li>
                     <li><a href="">♪ &nbsp Álbuns</a></li>
                 </div>
             </div>
             <div class="sairFundo">
-                <a href="login.html">sair</a>
+                <a href="../login.html">sair</a>
             </div>
         </div>
     </div>
@@ -74,40 +74,12 @@
                             <canvas id="graficoGeneros"></canvas>
                         </div>
                     </div>
-                    <div class="kpiContainer">
-                        <div class="kpi1">
-                            <span>A época que você<br><b>mais</b> conhece:</span>
-                            <span class="ano">2000</span>
-                        </div>
-
-                        <div class="kpi2">
-                            <span>A época que você<br><b>menos</b> conhece:</span>
-                            <span class="ano">1970</span>
-                        </div>
-
-                    </div>
 
                 </div>
 
                 <div class="tela2">
-                    <div class="kpiArtistas">
-                        <div class="artistaMais">
-                            <div class="legenda">
-                                <div class="nome"><span>João Gomes</span></div>
-                                <span><br>é o artista que você mais <b>acertou</b></span>
-                            </div>
-
-                            <div class="foto"><img class="artistaFoto" src="assets/joao-gomes-tiny-desk.webp" alt="">
-                            </div>
-                        </div>
-                        <div class="artistaMenos">
-                            <div class="legenda">
-                                <div class="nome"><span>Clairo</span></div>
-                                <span><br>é o artista que você mais <b>errou</b></span>
-                            </div>
-
-                            <div class="foto"><img class="artistaFoto" src="assets/clairo-charm.webp" alt=""></div>
-                        </div>
+                    <div class="caixa">
+                        
                     </div>
 
                     <div class="tabelaHistorico">
@@ -315,7 +287,7 @@
                         data: {
                             labels: labels,
                             datasets: [{
-                                label: "Acertos por gênero",
+                                label: "Ultimos Resultados",
                                 data: valores,
                                 backgroundColor: [
                                     'rgba(81, 56, 61, 0.85)',
@@ -334,7 +306,7 @@
                             indexAxis: 'y',
                             plugins: {
                                 legend: {
-                                    display: true
+                                    display: false,
                                 }
                             },
                             scales: {
