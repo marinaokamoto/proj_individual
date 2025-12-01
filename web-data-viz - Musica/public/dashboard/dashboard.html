@@ -84,7 +84,7 @@
                         </div>
                         <div class="caixa">
                             <img src="../assets/caixa.png" alt="">
-                            <div class="etiqueta"><span id="b_usuario">oiee</span></div>
+                            <div class="etiqueta"><span id="b_usuario2"></span></div>
                             <div id="divEtiq1" class="etiqueta1"></div>
                             <div id="divEtiq2" class="etiqueta2"><span>oiee</span></div>
                             <div id="divEtiq3" class="etiqueta3"><span>oiee</span></div>
@@ -125,10 +125,9 @@
     overlayUser.style.display = 'none';
     div_hamburguer.style.display = 'none';
     const resultados = JSON.parse(sessionStorage.getItem("RESULTADO_QUIZ"));
-    const nome = sessionStorage.NOME_USUARIO;
-    b_usuario.innerHTML = nome
-    
 
+    validarSessao();
+    b_usuario2.innerHTML = sessionStorage.NOME_USUARIO;
 
     function carregarDash() {
         kpi1();
@@ -204,6 +203,21 @@
                             plugins: {
                                 legend: {
                                     display: false,
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Resultados de todos os usuários',
+                                    position: 'bottom',
+                                    font: {
+                                        size: 14,
+                                        family: 'Inter',
+                                        weight: '400'
+                                    },
+                                    color: '#463337',
+                                    padding: {
+                                        top: 10,
+                                        bottom: 20
+                                    },
                                 }
                             },
                             scales: {
@@ -303,6 +317,21 @@
                             plugins: {
                                 legend: {
                                     display: false,
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Seus últimos resultados:',
+                                    position: 'bottom',
+                                    font: {
+                                        size: 14,
+                                        family: 'Inter',
+                                        weight: '400'
+                                    },
+                                    color: '#463337',
+                                    padding: {
+                                        top: 40,
+                                        bottom: 10
+                                    },
                                 }
                             },
                             scales: {
@@ -340,12 +369,18 @@
         fetch(`/dashboard/selos/${idUsuario}`).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                    if (resposta.includes('rock')) {
+                    
+                    const listaResposta = [];
+                    
+                    for (let i = 0; i < resposta.length; i++) {
+                        listaResposta.push(resposta[i].generoMais);
+                    }
+                    
+                    if (listaResposta.includes('pop')) {
                         divEtiq1.innerHTML = 
                         `<img src="../assets/rock.png">`
                     }
+                    console.log(`Dados recebidos: `, resposta);
                 });
             }
             else {
