@@ -61,7 +61,7 @@
                 <div class="graficos">
                     <div class="graf1">
                         <div class="textoKPI1">
-                        <span>Você se encaixa no grupo <br> que acertou mais sobre <span id="span_generoMais" class="spanKPIdin"></span></span>
+                        <span>Segundo seu último quiz, você se encaixa no <b>grupo</b> que acertou mais sobre <span id="span_generoMais" class="spanKPIdin"></span></span>
                         </div>
                         <div class="grafico1">
                             <canvas id="graficoGeral"></canvas>
@@ -69,7 +69,7 @@
                     </div>
 
                     <div class="graf2">
-                        <span class="spanMarrom">Aqui estão os gêneros que você <b>mais conhece:</b></span>
+                        <span class="spanMarrom">Aqui estão os gêneros que <b>você</b> <b>mais conhece:</b></span>
                         <div class="grafico2">
                             <canvas id="graficoGeneros"></canvas>
                         </div>
@@ -78,43 +78,36 @@
                 </div>
 
                 <div class="tela2">
-                    <div class="caixa">
-                        
+                    <div class="colecao">
+                        <div class="titulo">
+                        <span>Sua coleção de selos:</span>
+                        </div>
+                        <div class="caixa">
+                            <img src="../assets/caixa.png" alt="">
+                            <div class="etiqueta"><span id="b_usuario">oiee</span></div>
+                            <div id="divEtiq1" class="etiqueta1"></div>
+                            <div id="divEtiq2" class="etiqueta2"><span>oiee</span></div>
+                            <div id="divEtiq3" class="etiqueta3"><span>oiee</span></div>
+                            <div id="divEtiq4" class="etiqueta4"><span>oiee</span></div>
+                            <div id="divEtiq5" class="etiqueta5"><span>oiee</span></div>
+                            <div id="divEtiq6" class="etiqueta6"><span>oiee</span></div>
+                            <div id="divEtiq7" class="etiqueta7"><span>oiee</span></div>
+                            <div id="divEtiq8" class="etiqueta8"><span>oiee</span></div>
+                        </div>
                     </div>
 
                     <div class="tabelaHistorico">
+                        <div>
+                            <span>Ranking</span>
+                        </div>
                         <table>
                             <thead>
                                 <tr class="tabelaCabecalho">
-                                    <th>data</th>
-                                    <th>resultado final</th>
-                                    <th>pontuação</th>
+                                    <th>Usuário</th>
+                                    <th>Pontuação</th>
                                 </tr>
                             </thead>
-                            <tbody class="tabelaBody">
-                                <tr class="trContainer1">
-                                    <td>15/11/2025</td>
-                                    <td class="genero">Rock</td>
-                                    <td>08/10</td>
-                                </tr>
-
-                                <tr class="trContainer2">
-                                    <td>13/11/2025</td>
-                                    <td class="genero">Pop</td>
-                                    <td>07/10</td>
-                                </tr>
-
-                                <tr class="trContainer3">
-                                    <td>12/11/2025</td>
-                                    <td class="genero">Rock</td>
-                                    <td>07/10</td>
-                                </tr>
-
-                                <tr class="trContainer4">
-                                    <td>11/11/2025</td>
-                                    <td class="genero">MPB</td>
-                                    <td>06/10</td>
-                                </tr>
+                            <tbody id="tbody" class="tabelaBody">
                             </tbody>
                         </table>
                     </div>
@@ -132,7 +125,8 @@
     overlayUser.style.display = 'none';
     div_hamburguer.style.display = 'none';
     const resultados = JSON.parse(sessionStorage.getItem("RESULTADO_QUIZ"));
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    const nome = sessionStorage.NOME_USUARIO;
+    b_usuario.innerHTML = nome
     
 
 
@@ -140,6 +134,8 @@
         kpi1();
         grafico1();
         grafico2();
+        kpiSelos();
+        ranking();
     }
 
     function kpi1() {
@@ -338,6 +334,72 @@
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
     }
+
+    function kpiSelos() {
+        var idUsuario = sessionStorage.ID_USUARIO;
+        fetch(`/dashboard/selos/${idUsuario}`).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                    if (resposta.includes('rock')) {
+                        divEtiq1.innerHTML = 
+                        `<img src="../assets/rock.png">`
+                    }
+                });
+            }
+            else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+    
+    
+    listaCores = ['#F6EED9', '#EEDEAE', '#81B1E1', '#294EA7'];
+    listaLetraCor = ['#463337', '#F6EED9']
+    function ranking() {
+        fetch(`/dashboard/ranking`, { cache: 'no-store' })
+        .then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                const tbody = document.getElementById(`tbody`);
+                var cont = 1;
+
+                resposta.forEach(r => {
+                    const cor = listaCores[cont-1];
+                    let letracor;
+                    var resto4 = cont%4;
+
+                    if (resto4 == 0) {
+                        letracor = '#F6EED9';
+                    } else {
+                        letracor = '#463337';
+                    }
+                    
+                    tbody.innerHTML += 
+                    `<tr style="background-color: ${cor}">
+                    <td style="color: ${letracor}">${r.usuario}</td>
+                    <td style="color: ${letracor}"><b> ${r.pontuacao} / 16 </b></td>
+                    </tr>
+                    <br>`;
+                    cont++
+                });
+            });
+        }
+        else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+    
 
     function mostrarHamburguer() {
         overlayUser.style.display = 'block';

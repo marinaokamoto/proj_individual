@@ -12,5 +12,13 @@ router.get("/grafico2/:idUsuario", function (req, res) {
     dashboardController.grafico2(req, res);
 });
 
+router.get("/ranking", function (req, res) {
+    dashboardController.ranking(req,res);
+});
+
+router.get("/selos/:idUsuario", function (req, res) {
+    dashboardController.selos(req, res);
+});
+
 
 module.exports = router;

@@ -234,16 +234,9 @@ GROUP BY generoMais;
 -- TABELA RANKING
 SELECT 
 	u.nome as 'usuario',
-    MAX(pontuacao) as 'pontuacao'
+    r.pontuacao as 'pontuacao',
+    r.data as 'data'
 FROM Usuario u
-	JOIN Resultado r ON u.idUsuario = r.fkUsuario
-GROUP BY u.nome
-ORDER BY MAX(pontuacao) DESC LIMIT 4;
+	JOIN Resultado r ON u.idUsuario = r.fkUsuario;
 
--- SELOS
-SELECT
-	DISTINCT generoMais
-FROM Resultado
-WHERE fkUsuario = ;
-	
     
