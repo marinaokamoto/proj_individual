@@ -64,7 +64,7 @@ body {
 .fundo {
     display: flex;
     flex-direction: column;
-    height: 35vh;
+    height: 25vh;
     width: 15vw;
     z-index: 10;
     position: fixed;
@@ -207,7 +207,6 @@ a {
 .tela2 {
     height: 80vh;
     width: 90vw;
-    background-color: brown;
     padding-top: 40px;
     display: flex;
     justify-content: space-between;
@@ -215,7 +214,6 @@ a {
 
 .colecao {
     width: 50vw;
-    background-color: darkgreen;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -265,7 +263,6 @@ a {
     z-index: 10;
     bottom: 200px;
     left: 20px;
-    font-size: 18px;
 }
 
 .etiqueta3 {
@@ -273,7 +270,6 @@ a {
     z-index: 10;
     bottom: 200px;
     left: 200px;
-    font-size: 18px;
 }
 
 .etiqueta4 {
@@ -281,15 +277,13 @@ a {
     z-index: 10;
     bottom: 30px;
     left: 200px;
-    font-size: 18px;
 }
 
 .etiqueta5 {
     position: absolute;
     z-index: 10;
-    bottom: 30px;
-    left: 370px;
-    font-size: 18px;
+    bottom: 10px;
+    left: 350px;
 }
 
 .etiqueta6 {
@@ -297,15 +291,13 @@ a {
     z-index: 10;
     bottom: 200px;
     left: 370px;
-    font-size: 18px;
 }
 
 .etiqueta7 {
     position: absolute;
     z-index: 10;
-    bottom: 200px;
+    bottom: 190px;
     left: 550px;
-    font-size: 18px;
 }
 
 .etiqueta8 {
@@ -313,7 +305,6 @@ a {
     z-index: 10;
     bottom: 30px;
     left: 550px;
-    font-size: 18px;
 }
 
 .spanKPIdin {
@@ -324,7 +315,6 @@ a {
 .tabelaHistorico {
     width: 45%;
     height: 100%;
-    background-color: blueviolet;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -355,7 +345,6 @@ tbody {
     justify-content: center; 
     text-align: center;
     width: 100%;
-    background-color: chocolate;
 }
 
 th {

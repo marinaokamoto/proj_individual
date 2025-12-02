@@ -65,7 +65,7 @@ body {
 .fundo {
     display: flex;
     flex-direction: column;
-    height: 35vh;
+    height: 25vh;
     width: 15vw;
     z-index: 10;
     position: fixed;

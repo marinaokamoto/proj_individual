@@ -43,7 +43,6 @@
                 <div class="listaConteudo">
                     <li><a href="../quiz.html">𝄞 &nbsp Quiz</a></li>
                     <li><a href="dashboard.html">♩ &nbsp Dashboard</a></li>
-                    <li><a href="">♪ &nbsp Álbuns</a></li>
                 </div>
             </div>
             <div class="sairFundo">
@@ -83,16 +82,16 @@
                         <span>Sua coleção de selos:</span>
                         </div>
                         <div class="caixa">
-                            <img src="../assets/caixa.png" alt="">
+                            <img src="../assets/caixa (1).png" alt="">
                             <div class="etiqueta"><span id="b_usuario2"></span></div>
                             <div id="divEtiq1" class="etiqueta1"></div>
-                            <div id="divEtiq2" class="etiqueta2"><span>oiee</span></div>
-                            <div id="divEtiq3" class="etiqueta3"><span>oiee</span></div>
-                            <div id="divEtiq4" class="etiqueta4"><span>oiee</span></div>
-                            <div id="divEtiq5" class="etiqueta5"><span>oiee</span></div>
-                            <div id="divEtiq6" class="etiqueta6"><span>oiee</span></div>
-                            <div id="divEtiq7" class="etiqueta7"><span>oiee</span></div>
-                            <div id="divEtiq8" class="etiqueta8"><span>oiee</span></div>
+                            <div id="divEtiq2" class="etiqueta2"></div>
+                            <div id="divEtiq3" class="etiqueta3"></div>
+                            <div id="divEtiq4" class="etiqueta4"></div>
+                            <div id="divEtiq5" class="etiqueta5"></div>
+                            <div id="divEtiq6" class="etiqueta6"></div>
+                            <div id="divEtiq7" class="etiqueta7"></div>
+                            <div id="divEtiq8" class="etiqueta8"></div>
                         </div>
                     </div>
 
@@ -378,8 +377,45 @@
                     
                     if (listaResposta.includes('pop')) {
                         divEtiq1.innerHTML = 
-                        `<img src="../assets/rock.png">`
-                    }
+                        `<img src="../">`
+                    } 
+
+                    if (listaResposta.includes('rock')) {
+                        divEtiq2.innerHTML = 
+                        `<img src="../assets/SELOS/ROCK.png">`
+                    } 
+
+                    if (listaResposta.includes('sertanejo')) {
+                        divEtiq3.innerHTML = 
+                        `<img src="../assets/SELOS/SERTANEJO.png">`
+                    } 
+
+                    if (listaResposta.includes('indie')) {
+                        divEtiq4.innerHTML = 
+                        `<img src="../assets/SELOS/POP.png">`
+                    } 
+
+                    if (listaResposta.includes('mpb')) {
+                        divEtiq5.innerHTML = 
+                        `<img src="../assets/SELOS/MPB.png">`
+                    } 
+
+                    if (listaResposta.includes('funk')) {
+                        divEtiq6.innerHTML = 
+                        `<img src="../assets/SELOS/FUNK.png">`
+                    } 
+
+                    if (listaResposta.includes('kpop')) {
+                        divEtiq7.innerHTML = 
+                        `<img src="../assets/SELOS/KPOP.png">`
+                    } 
+
+                    if (listaResposta.includes('hiphop')) {
+                        divEtiq8.innerHTML = 
+                        `<img src="../assets/SELOS/HIPHOP.png">`
+                    } 
+
+                    
                     console.log(`Dados recebidos: `, resposta);
                 });
             }
