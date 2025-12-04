@@ -33,7 +33,7 @@
         <div class="box" >
             <div class="box1" >
                 <div class="bemvindo" >
-                    <span>bem-vindo!</span>
+                    <span>Bem-vindo!</span>
                 </div>
                 <div class="nota" >
                     <img src="assets/nota1.png" alt="">
@@ -41,20 +41,20 @@
             </div>
             <div class="box2" >
                 <div class="criarconta" >
-                    <span>criar conta:</span>
+                    <span>Criar conta:</span>
                 </div>
 
                 <div class="inputs">
                     <div class="nomeemail" >
                         <div class="input" >
-                            <span>nome:</span>
+                            <span>Nome:</span>
                             <input placeholder="insira seu nome"  type="text" id="input_nome">
 
                             <div id="div_analisarNome" class="validacao"></div>
                         </div>
 
                         <div class="input" >
-                            <span>email:</span>
+                            <span>Email:</span>
                             <input oninput="analisarEmail()" placeholder="insira seu email"  type="text" id="input_email">
 
                             <div id="div_analisarEmail" class="validacao"></div>
@@ -64,14 +64,14 @@
 
                     <div  class="senhaconfirm" >
                         <div class="input" >
-                            <span>senha:</span>
+                            <span>Senha:</span>
                             <input oninput="analisarSenha()" placeholder="insira sua senha"  type="password" id="input_senha">
 
                             <div id="div_analisarSenha" class="validacao" ></div>
                         </div>
 
                         <div class="input" >
-                            <span>confirmar senha:</span>
+                            <span>Confirmar senha:</span>
                             <input oninput="confirmSenha()" placeholder="confirme sua senha"  type="password" id="input_confirm">
 
                             <div id="div_confirmSenha" class="validacao"></div>
@@ -81,9 +81,9 @@
 
                 <div class="containerButton">
                     <div class="buttonCadastro">
-                        <a onclick="cadastrar()">cadastre-se</a>
+                        <a onclick="cadastrar()">Cadastre-se</a>
                     </div>
-                    <span><a href="login.html">já possui conta? <b>faça login!</b></a></span>
+                    <span><a href="login.html">Já possui conta? <b>Faça login!</b></a></span>
                 </div>
             </div>
         </div>
@@ -157,21 +157,8 @@
             div_confirmSenha.innerHTML = '';
         }
     }
-    
-    // function cadastrar() {
-    //     if (emailValido && senhaValida1 && senhaValida2 && confirmValida) {
-    //         alert('Cadastro Efetuado!');
-    //         window.location.href ='login.html';
-    //     } else {
-    //         alert('Cadastro Inválido! Confira os campos');
-    //     }
-    // }
 
   function cadastrar() {
-    // aguardar();
-
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
     var nomeVar = input_nome.value;
     var emailVar = input_email.value;
     var senhaVar = input_senha.value;

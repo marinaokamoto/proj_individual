@@ -31,27 +31,27 @@
         <div class="xadrez"><img src="assets/xadrezE.png" alt=""></div>
         <div class="card">
             <div class="bemvindo">
-                <span>bem-vindo!</span>
+                <span>Bem-vindo!</span>
             </div>
 
             <div class="resto">
                 <div class="input">
-                    <span>email:</span>
+                    <span>Email:</span>
                     <input placeholder="insira seu email" type="text" id="input_email">
                 </div>
 
                 <div class="input">
-                    <span>senha:</span>
+                    <span>Senha:</span>
                     <input placeholder="insira sua senha" type="password" id="input_senha">
                 </div>
 
                 <div class="containerButton">
                     <div onclick="entrar()" class="buttonLogin">
-                        <span>entrar</span>
+                        <span>Entrar</span>
                     </div>
                     
                     <div class="registro">
-                    <a href="cadastro.html">não tem cadastro?<b> registre-se!</b></a>
+                    <a href="cadastro.html">Não tem cadastro?<b> Registre-se!</b></a>
                     </div>
                 </div>
             </div>
@@ -66,14 +66,12 @@
 
 <script>
     function entrar() {
-        // aguardar();
 
         var emailVar = input_email.value;
         var senhaVar = input_senha.value;
 
         if (emailVar == "" || senhaVar == "") {
-            alert('Insira valores nos campos')
-            // finalizarAguardar();
+            alert('Insira valores nos campos');
             return false;
         }
 
@@ -104,17 +102,16 @@
 
                     setTimeout(function () {
                         window.location = "quiz.html";
-                    }, 1000); // apenas para exibir o loading
+                    }, 1000); 
 
                 });
 
             } else {
-
+                alert('Usuário não autenticado!')
                 console.log("Houve um erro ao tentar realizar o login!");
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    // finalizarAguardar(texto);
                 });
             }
 
